@@ -1,0 +1,47 @@
+{
+  "searchPlaceholder": "Ady ýa-da telefon belgisi boýunça gözläň...",
+  "table": {
+    "no": "No",
+    "name": "Ady",
+    "phone": "Telefon belgisi",
+    "city": "Şäheri",
+    "products": "Sargyt eden sany",
+    "total": "Jemi harçlanan pul",
+    "sent": "Ugradyldy"
+  },
+  "status": {
+    "new": "Täze",
+    "sent": "Ugradyldy",
+    "notSent": "Ugradylmady"
+  },
+  "filter": {
+    "label": "Ugradylyş ýagdaýy",
+    "all": "Ählisi",
+    "sent": "Ugradylan",
+    "notSent": "Ugradylmadyk"
+  },
+  "empty": {
+    "title": "Sargyt ýok",
+    "description": "Täze sargytlar şu ýerde görkeziler.",
+    "filtered": "Saýlanan süzgüç boýunça sargyt ýok."
+  },
+  "detail": {
+    "about": "Sargyt barada",
+    "back": "Sargytlara gaýt",
+    "customerName": "Ulanyjy ady",
+    "unnamed": "Sargyt #{{id}}",
+    "phone": "Telefon belgisi",
+    "city": "Şäheri",
+    "address": "Ýaşaýan salgysy",
+    "notes": "Goşmaça belligi",
+    "products": "Sargyt edilen harytlar ({{count}})",
+    "noProducts": "Harytlar ýok",
+    "quantity": "{{count}} sany",
+    "oldPrice": "Öňki bahasy:",
+    "itemCount": "Harytlaryň jemi sany",
+    "totalPrice": "Jemi bahasy",
+    "markSent": "Ugradyldy belle",
+    "markSentUnavailable": "Sargydy ugradyldy diýip bellemek üçin API entek ýok",
+    "notFound": "Sargyt tapylmady"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "add": "Banner goşmak",
+  "edit": "{{name}} banneri üýtget",
+  "searchPlaceholder": "Gözle...",
+  "tabs": {
+    "label": "Reklama bölümi",
+    "banners": "Bannerler",
+    "notifications": "Bildirişler"
+  },
+  "table": {
+    "no": "No.",
+    "title": "Ady",
+    "startDate": "Başlanan senesi",
+    "endDate": "Tamamlanmaly senesi",
+    "status": "Ýagdaýy"
+  },
+  "status": {
+    "active": "Aktiw",
+    "inactive": "Aktiw däl"
+  },
+  "empty": {
+    "title": "Banner ýok",
+    "description": "Ilkinji reklama bannerini goşuň."
+  },
+  "delete": {
+    "unavailable": "Banneri pozmak üçin API entek ýok"
+  },
+  "form": {
+    "createTitle": "Banner goşmak",
+    "editTitle": "Banneri üýtgetmek",
+    "created": "Banner goşuldy",
+    "updated": "Banner ýatda saklandy",
+    "about": "Reklama barada",
+    "phone": "Telefon belgisi",
+    "link": "Salgylanma",
+    "startDate": "Başlanan senesi",
+    "endDate": "Tamamlanmaly senesi",
+    "currentStatus": "Häzirki ýagdaýy:",
+    "banner": "Banner suratyny ýüklemek",
+    "bannerHint": "Maslahat berilýän ölçeg: 1600 × 600 px.",
+    "titleTk": "Ady (türkmen dilinde)",
+    "titleTkPlaceholder": "Meselem: Mekdep harytlary",
+    "titleRu": "Ady (rus dilinde)",
+    "titleRuPlaceholder": "Например: Школьные товары",
+    "descriptionTk": "Reklama barada (türkmen dilinde)",
+    "descriptionTkPlaceholder": "Reklamanyň gysgaça beýany",
+    "descriptionRu": "Reklama barada (rus dilinde)",
+    "descriptionRuPlaceholder": "Краткое описание рекламы",
+    "statusHint": "Ýagdaýy serwer kesgitleýär",
+    "imageLockedHint": "Ýüklenen suratlary aýyrmak üçin API ýok.",
+    "mockNotice": "Banneri üýtgetmek üçin API entek ýok — üýtgeşmeler serwerde ýatda saklanmaýar."
+  }
+}

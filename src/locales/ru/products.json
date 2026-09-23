@@ -1,0 +1,69 @@
+{
+  "add": "Добавить товар",
+  "edit": "Изменить товар {{name}}",
+  "searchPlaceholder": "Поиск товара...",
+  "table": {
+    "no": "№",
+    "product": "Товар",
+    "createdAt": "Дата создания",
+    "orders": "Заказано раз",
+    "price": "Цена",
+    "status": "Статус"
+  },
+  "empty": {
+    "title": "Товаров нет",
+    "description": "Добавьте первый товар — он появится здесь."
+  },
+  "delete": {
+    "action": "Удалить товар {{name}}",
+    "title": "Удаление товара",
+    "descriptionOne": "Удалить товар «{{name}}»? Это действие нельзя отменить.",
+    "descriptionMany": "Удалить выбранные товары ({{count}})? Это действие нельзя отменить.",
+    "success": "Удалено товаров: {{count}}"
+  },
+  "form": {
+    "createTitle": "Добавление товара",
+    "editTitle": "Редактирование товара",
+    "created": "Товар добавлен",
+    "updated": "Товар сохранён",
+    "about": "О товаре",
+    "name": "Название",
+    "namePlaceholder": "Например: iPhone 15",
+    "pricing": "Цены",
+    "price": "Цена",
+    "discountPrice": "Цена со скидкой",
+    "discountHint": "Необязательно. Должна быть меньше цены.",
+    "attributes": "Характеристики",
+    "attributesHint": "Укажите каждую характеристику на туркменском и русском. Пустые блоки не сохраняются.",
+    "attributeN": "Характеристика {{n}}",
+    "attrKeyTk": "Характеристика (на туркменском)",
+    "attrKeyRu": "Характеристика (на русском)",
+    "attrValue": "Значение",
+    "attrKeyTkPlaceholder": "Meselem: Reňki",
+    "attrValueTkPlaceholder": "Meselem: Gara, gyzyl",
+    "attrKeyRuPlaceholder": "Например: Цвет",
+    "attrValueRuPlaceholder": "Например: Чёрный, красный",
+    "addAttribute": "Добавить характеристику",
+    "removeAttribute": "Удалить характеристику {{n}}",
+    "images": "Изображения товара",
+    "imagesHint": "Главное изображение показывается в списках и карточках.",
+    "category": "Категория товара",
+    "categoryPlaceholder": "Выберите",
+    "nameHint": "API хранит одно название товара.",
+    "descriptionTk": "Описание (на туркменском)",
+    "descriptionTkPlaceholder": "Harydyň gysgaça beýany",
+    "descriptionRu": "Описание (на русском)",
+    "descriptionRuPlaceholder": "Краткое описание товара",
+    "onSale": "В продаже",
+    "pausedHint": "Снятый с продажи товар не показывается в магазине.",
+    "imageLockedHint": "Удалить изображения с сервера нельзя — нет эндпоинта. Можно заменить главное или добавить новые.",
+    "categoryUnknownNotice": "API не вернул категорию товара, и найти её по списку тоже не удалось — выберите категорию и подкатегорию перед сохранением.",
+    "subcategory": "Подкатегория",
+    "subcategoryHint": "Сначала выберите категорию",
+    "subcategoryPlaceholder": "Выберите"
+  },
+  "status": {
+    "onSale": "В продаже",
+    "paused": "Снят"
+  }
+}

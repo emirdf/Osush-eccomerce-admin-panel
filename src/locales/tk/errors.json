@@ -1,0 +1,15 @@
+{
+  "unknown": "Näsazlyk ýüze çykdy. Gaýtadan synanyşyň.",
+  "network": "Serwer bilen baglanyşyk ýok. Internetiňizi barlaň.",
+  "not_found": "Ýazgy tapylmady.",
+  "invalid_credentials": "Telefon belgisi ýa-da parol nädogry.",
+  "category_in_use": "Bu kategoriýada harytlar bar, ony pozup bolmaýar.",
+  "wrong_current_password": "Häzirki parol nädogry.",
+  "upload_failed": "Suraty ýükläp bolmady.",
+  "http_401": "Sessiýanyň möhleti gutardy. Täzeden giriň.",
+  "http_403": "Bu hereket üçin rugsadyňyz ýok.",
+  "http_500": "Serwerde näsazlyk. Soňrak synanyşyň.",
+  "bad_request": "Talap nädogry.",
+  "conflict": "Bu amaly ýerine ýetirip bolmady.",
+  "validation": "Maglumatlar nädogry doldurylypdyr."
+}

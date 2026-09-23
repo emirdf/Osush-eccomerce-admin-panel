@@ -1,0 +1,107 @@
+{
+  "appName": "Ösüş Store",
+  "footer": "2026 osush.com.tm. Made by \"Umuman\" team",
+  "save": "Ýatda sakla",
+  "cancel": "Ýatyr",
+  "cancelEdit": "Üýtget",
+  "delete": "Poz",
+  "edit": "Üýtget",
+  "close": "Ýap",
+  "clear": "Arassala",
+  "search": "Gözle...",
+  "select": "Saýlaň",
+  "noOptions": "Hiç zat tapylmady",
+  "retry": "Gaýtadan synanyş",
+  "loading": "Ýüklenýär...",
+  "viewAll": "Ählisini gör",
+  "skipToContent": "Esasy mazmuna geç",
+  "showPassword": "Paroly görkez",
+  "hidePassword": "Paroly gizle",
+  "phonePlaceholder": "+993 6X XX XX XX",
+  "role": {
+    "admin": "Admin"
+  },
+  "theme": {
+    "toDark": "Garaňky tema",
+    "toLight": "Ýagty tema"
+  },
+  "language": {
+    "label": "Dil",
+    "tk": "Türkmençe",
+    "ru": "Русский"
+  },
+  "password": {
+    "hint": "Parolyň berkligi",
+    "weak": "Gowşak",
+    "medium": "Ortaça",
+    "strong": "Berk"
+  },
+  "table": {
+    "actions": "Hereket",
+    "empty": "Maglumat ýok",
+    "noResults": "Hiç zat tapylmady",
+    "noResultsHint": "«{{query}}» boýunça netije ýok. Başga söz bilen gözläp görüň.",
+    "selectAll": "Sahypadaky ähli setirleri saýla",
+    "selectRow": "{{name}} saýla"
+  },
+  "bulk": {
+    "label": "Saýlanan setirler",
+    "selected": "{{count}} saýlandy",
+    "clear": "Saýlawy aýyr",
+    "deleteSelected": "Saýlananlary poz"
+  },
+  "pagination": {
+    "label": "Sahypalar",
+    "prev": "Yza",
+    "next": "Öňe",
+    "page": "Sahypa {{page}}",
+    "pageOf": "{{page}} / {{total}}"
+  },
+  "date": {
+    "placeholder": "GG.AA.ÝÝÝÝ",
+    "choose": "Sene saýlaň",
+    "today": "Şu gün",
+    "prevMonth": "Öňki aý",
+    "nextMonth": "Indiki aý",
+    "months": ["Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"],
+    "weekdaysShort": ["Du", "Si", "Ça", "Pe", "An", "Şe", "Ýe"]
+  },
+  "images": {
+    "upload": "Surat ýükle",
+    "dropHint": "ýa-da faýly şu ýere süýräp getiriň",
+    "formats": "PNG, JPG, WEBP · iň köp {{size}} MB",
+    "add": "Surat goş",
+    "additional": "Goşmaça suratlar",
+    "preview": "Suratyň öňünden görnüşi",
+    "mainAlt": "Esasy surat",
+    "mainBadge": "Esasy surat",
+    "remove": "Suraty aýyr",
+    "removeMain": "Esasy suraty aýyr",
+    "removeNumber": "{{index}}-nji goşmaça suraty aýyr",
+    "replace": "Çalyş",
+    "makeMain": "Esasy surat et",
+    "makeMainNumber": "{{index}}-nji suraty esasy surat et",
+    "madeMain": "Esasy surat çalşyldy",
+    "removed": "Surat aýryldy",
+    "moved": "Surat {{position}} / {{total}} orna geçirildi",
+    "position": "Goşmaça surat {{index}} / {{total}}",
+    "reorderHint": "Tertibini üýtgetmek üçin suratlary süýräň ýa-da ← → düwmelerini ulanyň. ★ — esasy surat et.",
+    "errorType": "{{name}}: diňe PNG, JPG ýa-da WEBP suratlar kabul edilýär",
+    "errorSize": "{{name}}: faýl {{size}} MB-dan uly",
+    "maxReached": "Iň köp {{max}} goşmaça surat goşup bolýar"
+  },
+  "discard": {
+    "title": "Üýtgeşmeler ýatda saklanmady",
+    "description": "Sahypadan çykmak isleýärsiňizmi? Girizen maglumatlaryňyz ýitiriler.",
+    "confirm": "Çyk"
+  },
+  "error": {
+    "title": "Maglumaty ýükläp bolmady",
+    "description": "Näsazlyk ýüze çykdy. Gaýtadan synanyşyň."
+  },
+  "notFound": {
+    "title": "Sahypa tapylmady",
+    "description": "Gözleýän sahypaňyz ýok ýa-da başga ýere geçirildi.",
+    "backHome": "Baş sahypa gaýt"
+  }
+}

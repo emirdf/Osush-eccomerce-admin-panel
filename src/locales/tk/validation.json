@@ -1,0 +1,19 @@
+{
+  "required": "Bu meýdany dolduryň",
+  "tooLong": "Gaty uzyn",
+  "number": "San giriziň",
+  "integer": "Bitin san giriziň",
+  "positive": "Noldan uly bolmaly",
+  "nonNegative": "Otrisatel bolup bilmez",
+  "phone": "Belgini +993 6X XX XX XX görnüşinde giriziň",
+  "httpsUrl": "https:// bilen başlaýan dogry salgy giriziň",
+  "discountLessThanPrice": "Skitka bahasy bahadan az bolmaly",
+  "mainImageRequired": "Esasy suraty ýükläň",
+  "bannerRequired": "Banner suratyny ýükläň",
+  "passwordMin": "Parol azyndan 8 simwoldan ybarat bolmaly",
+  "passwordsMismatch": "Parollar gabat gelmeýär",
+  "passwordSameAsCurrent": "Täze parol häzirki paroldan tapawutly bolmaly",
+  "endNotBeforeStart": "Tamamlanmaly senesi başlanan senesinden öň bolmaly däl",
+  "attributeKeyRequired": "Aýratynlygyň adyny giriziň",
+  "duplicateAttributeKey": "Bu aýratynlyk eýýäm goşuldy"
+}

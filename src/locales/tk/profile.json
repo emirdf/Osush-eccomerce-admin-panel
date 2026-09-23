@@ -1,0 +1,22 @@
+{
+  "title": "Admin profili",
+  "saved": "Profil ýatda saklandy",
+  "lastName": "Familýasy",
+  "phone": "Telefon belgisi",
+  "avatar": {
+    "upload": "Täze surat ýükle",
+    "delete": "Poz",
+    "deleteUnavailable": "Surady pozmak üçin API ýok"
+  },
+  "password": {
+    "title": "Paroly üýtgetmek",
+    "description": "Howpsuzlyk üçin azyndan 8 simwolly, harp we sanly parol saýlaň.",
+    "current": "Häzirki parol",
+    "new": "Täze parol",
+    "confirm": "Täze paroly tassykla",
+    "submit": "Paroly täzele",
+    "saved": "Parol üýtgedildi",
+    "mockNotice": "Paroly üýtgetmek üçin API entek ýok — üýtgeşme serwerde ýatda saklanmaýar."
+  },
+  "userName": "Ulanyjy ady"
+}

@@ -1,0 +1,18 @@
+{
+  "stats": {
+    "label": "Umumy görkezijiler",
+    "users": "Jemi ulanyjylar",
+    "products": "Harydyň sany",
+    "categories": "Kategoriýa sany"
+  },
+  "products": {
+    "title": "Ähli harytlar",
+    "product": "Harytlar",
+    "orders": "Jemi sargyt sany",
+    "price": "Bahasy"
+  },
+  "users": {
+    "title": "Ähli ulanyjylar",
+    "header": "Ulanyjylar"
+  }
+}

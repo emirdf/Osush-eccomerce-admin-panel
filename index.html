@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="tk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ösüş Store · Admin</title>
+    <script>
+      // Apply theme + language before first paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var theme = JSON.parse(localStorage.getItem('osus.theme'));
+          if (theme !== 'light' && theme !== 'dark') {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+          var lang = JSON.parse(localStorage.getItem('osus.lang'));
+          if (lang === 'tk' || lang === 'ru') document.documentElement.lang = lang;
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

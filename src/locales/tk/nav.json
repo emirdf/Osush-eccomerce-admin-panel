@@ -1,0 +1,15 @@
+{
+  "main": "Esasy menýu",
+  "dashboard": "Baş sahypa",
+  "users": "Ulanyjylar",
+  "products": "Harytlar",
+  "categories": "Kategoriýalar",
+  "orders": "Sargyt edilenler",
+  "ads": "Reklamalar",
+  "notifications": "Bildirişler",
+  "profile": "Profil",
+  "accountMenu": "Hasap menýusy",
+  "openMenu": "Menýuny aç",
+  "collapse": "Menýuny kiçelt",
+  "expand": "Menýuny giňelt"
+}

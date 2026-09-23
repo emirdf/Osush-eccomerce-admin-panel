@@ -1,0 +1,32 @@
+{
+  "add": "Отправить уведомление",
+  "editUnavailable": "Изменение уведомления пока не поддерживается API",
+  "deleteUnavailable": "Удаление уведомления пока не поддерживается API",
+  "searchPlaceholder": "Поиск...",
+  "table": {
+    "no": "№",
+    "title": "Заголовок",
+    "body": "Текст уведомления",
+    "life": "Срок",
+    "createdAt": "Дата создания"
+  },
+  "empty": {
+    "title": "Уведомлений нет",
+    "description": "Отправьте пользователям первое уведомление."
+  },
+  "form": {
+    "createTitle": "Новое уведомление",
+    "send": "Отправить",
+    "created": "Уведомление отправлено",
+    "titleTk": "Заголовок (туркменский)",
+    "titleTkPlaceholder": "Meselem: Täze harytlar geldi",
+    "titleRu": "Заголовок (русский)",
+    "titleRuPlaceholder": "Например: Поступили новые товары",
+    "bodyTk": "Текст (туркменский)",
+    "bodyTkPlaceholder": "Ulanyjylara näme habar bermek isleýärsiňiz?",
+    "bodyRu": "Текст (русский)",
+    "bodyRuPlaceholder": "О чём вы хотите сообщить пользователям?",
+    "life": "Срок",
+    "lifeHint": "Поле «life» в API — целое положительное число."
+  }
+}

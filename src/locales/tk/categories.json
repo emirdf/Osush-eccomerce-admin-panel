@@ -1,0 +1,36 @@
+{
+  "add": "Kategoriýa goşmak",
+  "edit": "{{name}} kategoriýasyny üýtget",
+  "empty": {
+    "title": "Kategoriýa ýok",
+    "description": "Harytlary toparlamak üçin ilkinji kategoriýany goşuň."
+  },
+  "delete": {
+    "action": "{{name}} kategoriýasyny poz",
+    "title": "Kategoriýany pozmak",
+    "description": "«{{name}}» kategoriýasyny we onuň kiçi kategoriýalaryny pozmak isleýärsiňizmi?",
+    "success": "Kategoriýa pozuldy"
+  },
+  "form": {
+    "createTitle": "Kategoriýa goşmak",
+    "editTitle": "Kategoriýany üýtgetmek",
+    "created": "Kategoriýa goşuldy",
+    "updated": "Kategoriýa ýatda saklandy",
+    "about": "Kategoriýa barada",
+    "subcategories": "Degişli kiçi kategoriýalar",
+    "subcategoriesHint": "Her kiçi kategoriýa aýratyn ýazgy. API olar üçin bir at saklaýar.",
+    "subName": "Kiçi kategoriýanyň ady ({{n}})",
+    "addSubcategory": "Goş",
+    "removeSubcategory": "{{n}}-nji kiçi kategoriýany aýyr",
+    "image": "Kategoriýanyň suraty",
+    "name": "Ady",
+    "nameHint": "API kategoriýanyň ady üçin bir meýdan saklaýar — iki dil üçin hem şol bir at.",
+    "namePlaceholder": "Meselem: Telefonlar",
+    "subPlaceholder": "Meselem: iPhone 15",
+    "imageHint": "Hökmany däl. Täze surat ýüklenmese, öňki surat galýar.",
+    "partialFailure": "{{count}} kiçi kategoriýa ýatda saklanmady",
+    "failedRows": "Şu setirler ýatda saklanmady, täzeden synanyşyň:",
+    "savingSubcategories": "Kiçi kategoriýalar ýatda saklanýar: {{done}} / {{total}}"
+  },
+  "searchPlaceholder": "Kategoriýany gözläň..."
+}

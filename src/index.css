@@ -1,0 +1,293 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/manrope';
+
+/*
+ * ─── Design tokens ─────────────────────────────────────────────────────────
+ * Every color, radius and shadow lives here as a CSS variable. Components only
+ * use the Tailwind utilities generated from these (bg-surface, text-fg-muted,
+ * rounded-card…). Switching `data-theme="dark"` on <html> swaps everything.
+ */
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root {
+  color-scheme: light;
+
+  /* Neutral ramp */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f7;
+  --gray-200: #e7e9ee;
+  --gray-300: #d5d9e0;
+  --gray-400: #a7adb8;
+  --gray-500: #8a909c;
+  --gray-600: #5b6272;
+  --gray-700: #3d4452;
+  --gray-800: #252a35;
+  --gray-900: #141824;
+
+  /* Surfaces */
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-muted: #f5f6f8;
+  --surface-hover: #f8f9fb;
+  --border: #e7e9ee;
+  --border-strong: #d5d9e0;
+
+  /* Text */
+  --fg: #141824;
+  --fg-muted: #5b6272;
+  --fg-subtle: #8a909c;
+
+  /* Brand — given */
+  --primary: #0c4094;
+  --primary-hover: #0a3479;
+  --primary-soft: #edf2fa;
+  --primary-text: #0c4094;
+  --on-primary: #ffffff;
+
+  --success: #4ea674;
+  --success-hover: #43915f;
+  --success-soft: #eaf8e7;
+  --success-text: #2f7a50;
+  --on-success: #ffffff;
+  /* Background of an order row the admin has not opened yet. */
+  --row-new: #f4fff9;
+
+  --danger: #d22630;
+  --danger-hover: #b81f28;
+  --danger-soft: #fcebec;
+  --danger-text: #c0222b;
+  --on-danger: #ffffff;
+
+  /* Used only for the "category count" stat (matches the logo dots). */
+  --orange: #e8761c;
+
+  --ring: #0c4094;
+  --overlay: rgb(15 17 23 / 0.45);
+  --shadow: 0 1px 2px rgb(16 24 40 / 0.04), 0 2px 8px rgb(16 24 40 / 0.05);
+  --logo-filter: none;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --gray-50: #13161d;
+  --gray-100: #1b1f27;
+  --gray-200: #262b36;
+  --gray-300: #333947;
+  --gray-400: #4a5160;
+  --gray-500: #6f7584;
+  --gray-600: #a2a8b5;
+  --gray-700: #c4c8d0;
+  --gray-800: #dee1e6;
+  --gray-900: #f1f3f5;
+
+  --bg: #0f1117;
+  --surface: #171a21;
+  --surface-muted: #1d2029;
+  --surface-hover: #1c2029;
+  --border: #232733;
+  --border-strong: #313645;
+
+  --fg: #e8eaf0;
+  --fg-muted: #a2a8b5;
+  --fg-subtle: #6f7584;
+
+  /* Fills keep white text ≥ 4.5:1; *-text variants are lifted for dark surfaces. */
+  --primary: #3a6fd8;
+  --primary-hover: #4a7de3;
+  --primary-soft: #1a2438;
+  --primary-text: #8db2f7;
+  --on-primary: #ffffff;
+
+  --success: #2b7f50;
+  --success-hover: #33905c;
+  --success-soft: #15271d;
+  --success-text: #6fcf97;
+  --on-success: #ffffff;
+  --row-new: #122119;
+
+  --danger: #c62f38;
+  --danger-hover: #d63c45;
+  --danger-soft: #2e1719;
+  --danger-text: #f28b90;
+  --on-danger: #ffffff;
+
+  --orange: #f5a05a;
+
+  --ring: #8db2f7;
+  --overlay: rgb(0 0 0 / 0.6);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 8px rgb(0 0 0 / 0.25);
+  --logo-filter: brightness(1.9) saturate(0.9);
+}
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Type scale (base 14px) */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.375rem;
+  --text-md: 1rem;
+  --text-md--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.625rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.375rem;
+
+  --radius-control: 8px;
+  --radius-card: 12px;
+
+  --animate-fade-in: fade-in 150ms ease-out;
+  --animate-pop-in: pop-in 160ms ease-out;
+  --animate-drawer-in: drawer-in 200ms ease-out;
+  --animate-toast-in: toast-in 200ms ease-out;
+  --animate-spin: spin 0.8s linear infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(4px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes drawer-in {
+    from { transform: translateX(-100%); }
+    to { transform: none; }
+  }
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+}
+
+@theme inline {
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-gray-900: var(--gray-900);
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-text: var(--primary-text);
+  --color-on-primary: var(--on-primary);
+
+  --color-success: var(--success);
+  --color-success-hover: var(--success-hover);
+  --color-success-soft: var(--success-soft);
+  --color-success-text: var(--success-text);
+  --color-on-success: var(--on-success);
+  --color-row-new: var(--row-new);
+
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-text: var(--danger-text);
+  --color-on-danger: var(--on-danger);
+
+  --color-orange: var(--orange);
+  --color-ring: var(--ring);
+  --color-overlay: var(--overlay);
+
+  --shadow-card: var(--shadow);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border);
+  }
+
+  html,
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::placeholder {
+    color: var(--fg-subtle);
+    opacity: 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .logo-img {
+    filter: var(--logo-filter);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "searchPlaceholder": "Ady ýa-da telefon belgisi boýunça gözläň...",
+  "table": {
+    "no": "No",
+    "name": "Ady",
+    "phone": "Telefon belgisi",
+    "orders": "Sargyt eden sany",
+    "spent": "Jemi harçlanan pul"
+  },
+  "empty": {
+    "title": "Ulanyjy ýok",
+    "description": "Täze ulanyjylar hasaba alnanda şu ýerde görkeziler."
+  },
+  "delete": {
+    "unavailable": "Ulanyjyny pozmak üçin API entek ýok"
+  }
+}

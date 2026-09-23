@@ -1,0 +1,69 @@
+{
+  "add": "Haryt goşmak",
+  "edit": "{{name}} harydy üýtget",
+  "searchPlaceholder": "Harydyňyzy gözläň...",
+  "table": {
+    "no": "T/b",
+    "product": "Haryt",
+    "createdAt": "Döredilen senesi",
+    "orders": "Näçesi sargyt edildi",
+    "price": "Bahasy",
+    "status": "Ýagdaýy"
+  },
+  "empty": {
+    "title": "Haryt ýok",
+    "description": "Ilkinji harydyňyzy goşuň — ol şu ýerde görkeziler."
+  },
+  "delete": {
+    "action": "{{name}} harydy poz",
+    "title": "Harydy pozmak",
+    "descriptionOne": "«{{name}}» harydyny pozmak isleýärsiňizmi? Bu hereketi yzyna gaýtaryp bolmaýar.",
+    "descriptionMany": "Saýlanan {{count}} harydy pozmak isleýärsiňizmi? Bu hereketi yzyna gaýtaryp bolmaýar.",
+    "success": "{{count}} haryt pozuldy"
+  },
+  "form": {
+    "createTitle": "Haryt goşmak",
+    "editTitle": "Harydy üýtgetmek",
+    "created": "Haryt goşuldy",
+    "updated": "Haryt ýatda saklandy",
+    "about": "Haryt barada",
+    "name": "Ady",
+    "namePlaceholder": "Meselem: iPhone 15",
+    "pricing": "Nyrhnama",
+    "price": "Bahasy",
+    "discountPrice": "Skitka bahasy",
+    "discountHint": "Hökmany däl. Bahadan az bolmaly.",
+    "attributes": "Aýratynlyklary",
+    "attributesHint": "Her aýratynlygy türkmen we rus dillerinde giriziň. Boş galan bloklar ýatda saklanmaýar.",
+    "attributeN": "Aýratynlyk {{n}}",
+    "attrKeyTk": "Aýratynlygy (türkmen dilinde)",
+    "attrKeyRu": "Aýratynlygy (rus dilinde)",
+    "attrValue": "Aýratynlygy",
+    "attrKeyTkPlaceholder": "Meselem: Reňki",
+    "attrValueTkPlaceholder": "Meselem: Gara, gyzyl",
+    "attrKeyRuPlaceholder": "Например: Цвет",
+    "attrValueRuPlaceholder": "Например: Чёрный, красный",
+    "addAttribute": "Aýratynlyk goş",
+    "removeAttribute": "{{n}}-nji aýratynlygy aýyr",
+    "images": "Harydyň suratyny ýüklemek",
+    "imagesHint": "Esasy surat sanawlarda we kartlarda görkezilýär.",
+    "category": "Harydyň kategoriýasy",
+    "categoryPlaceholder": "Saýlaň",
+    "nameHint": "Ady API-de bir dilde saklanýar.",
+    "descriptionTk": "Haryt barada (türkmen dilinde)",
+    "descriptionTkPlaceholder": "Harydyň gysgaça beýany",
+    "descriptionRu": "Haryt barada (rus dilinde)",
+    "descriptionRuPlaceholder": "Краткое описание товара",
+    "onSale": "Satuwda",
+    "pausedHint": "Öçürilen haryt dükanda görkezilmeýär.",
+    "imageLockedHint": "Serwerdäki suratlary aýyrmak üçin API ýok. Esasy suraty çalşyp ýa-da täze surat goşup bolýar.",
+    "categoryUnknownNotice": "API bu haryt üçin kategoriýany gaýtarmady we ony sanawdan hem tapyp bolmady — ýatda saklamazdan öň kategoriýany we kiçi kategoriýany saýlaň.",
+    "subcategory": "Kiçi kategoriýa",
+    "subcategoryHint": "Ilki kategoriýany saýlaň",
+    "subcategoryPlaceholder": "Saýlaň"
+  },
+  "status": {
+    "onSale": "Satuwda",
+    "paused": "Duruzyldy"
+  }
+}

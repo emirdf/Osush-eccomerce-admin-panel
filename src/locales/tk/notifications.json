@@ -1,0 +1,32 @@
+{
+  "add": "Bildiriş ugratmak",
+  "editUnavailable": "Bildirişi üýtgetmek üçin API entek ýok",
+  "deleteUnavailable": "Bildirişi pozmak üçin API entek ýok",
+  "searchPlaceholder": "Gözle...",
+  "table": {
+    "no": "No.",
+    "title": "Ady",
+    "body": "Bildiriş barada",
+    "life": "Möhleti",
+    "createdAt": "Döredilen senesi"
+  },
+  "empty": {
+    "title": "Bildiriş ýok",
+    "description": "Ulanyjylara ilkinji bildirişi ugradyň."
+  },
+  "form": {
+    "createTitle": "Bildiriş ugratmak",
+    "send": "Ugrat",
+    "created": "Bildiriş ugradyldy",
+    "titleTk": "Ady (türkmençe)",
+    "titleTkPlaceholder": "Meselem: Täze harytlar geldi",
+    "titleRu": "Ady (rusça)",
+    "titleRuPlaceholder": "Например: Поступили новые товары",
+    "bodyTk": "Bildiriş barada (türkmençe)",
+    "bodyTkPlaceholder": "Ulanyjylara näme habar bermek isleýärsiňiz?",
+    "bodyRu": "Bildiriş barada (rusça)",
+    "bodyRuPlaceholder": "О чём вы хотите сообщить пользователям?",
+    "life": "Möhleti",
+    "lifeHint": "API-daky «life» meýdany — noldan uly bitin san."
+  }
+}

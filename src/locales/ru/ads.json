@@ -1,0 +1,53 @@
+{
+  "add": "Добавить баннер",
+  "edit": "Изменить баннер {{name}}",
+  "searchPlaceholder": "Поиск...",
+  "tabs": {
+    "label": "Раздел рекламы",
+    "banners": "Баннеры",
+    "notifications": "Уведомления"
+  },
+  "table": {
+    "no": "№",
+    "title": "Название",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "status": "Статус"
+  },
+  "status": {
+    "active": "Активен",
+    "inactive": "Неактивен"
+  },
+  "empty": {
+    "title": "Баннеров нет",
+    "description": "Добавьте первый рекламный баннер."
+  },
+  "delete": {
+    "unavailable": "Удаление баннера пока не поддерживается API"
+  },
+  "form": {
+    "createTitle": "Добавление баннера",
+    "editTitle": "Редактирование баннера",
+    "created": "Баннер добавлен",
+    "updated": "Баннер сохранён",
+    "about": "О рекламе",
+    "phone": "Номер телефона",
+    "link": "Ссылка",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "currentStatus": "Текущий статус:",
+    "banner": "Изображение баннера",
+    "bannerHint": "Рекомендуемый размер: 1600 × 600 px.",
+    "titleTk": "Название (на туркменском)",
+    "titleTkPlaceholder": "Meselem: Mekdep harytlary",
+    "titleRu": "Название (на русском)",
+    "titleRuPlaceholder": "Например: Школьные товары",
+    "descriptionTk": "Описание (на туркменском)",
+    "descriptionTkPlaceholder": "Reklamanyň gysgaça beýany",
+    "descriptionRu": "Описание (на русском)",
+    "descriptionRuPlaceholder": "Краткое описание рекламы",
+    "statusHint": "Статус вычисляет сервер",
+    "imageLockedHint": "Удалить загруженные изображения нельзя — нет эндпоинта.",
+    "mockNotice": "Эндпоинта редактирования баннера ещё нет — изменения не сохраняются на сервере."
+  }
+}
