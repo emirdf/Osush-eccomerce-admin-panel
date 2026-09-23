@@ -3,7 +3,7 @@ import { http } from './client'
 import { toNotification, toNotificationDto } from './mappers/notification'
 import { parseDto } from './types/common'
 import { notificationListDto } from './types/notification.dto'
-import type { ListParams, ListResult, Notification, NotificationPayload } from './types/models'
+import type { ID, ListParams, ListResult, Notification, NotificationPayload } from './types/models'
 
 const matchesSearch = (notification: Notification, search: string) => {
   const query = search.trim().toLocaleLowerCase()
@@ -12,10 +12,7 @@ const matchesSearch = (notification: Notification, search: string) => {
   return [title.tk, title.ru, body.tk, body.ru].some((text) => text.toLocaleLowerCase().includes(query))
 }
 
-/**
- * Only list and create exist. No update, delete or unread count — see
- * DISABLED.notificationEdit / notificationDelete and API_GAPS.md.
- */
+/** List, create and delete only — no update or unread count (API_GAPS.md). */
 export const notificationsApi = {
   /** TODO(api): limit/offset/search support is undocumented — filter and slice locally, like banners. */
   async list({ page = 1, limit = DEFAULT_LIMIT, search = '' }: ListParams): Promise<ListResult<Notification>> {
@@ -28,5 +25,10 @@ export const notificationsApi = {
 
   async create(payload: NotificationPayload): Promise<void> {
     await http.post('/notification/admin', toNotificationDto(payload))
+  },
+
+  /** DELETE takes one id; a bulk delete is one request per id. */
+  async remove(ids: ID[]): Promise<void> {
+    await Promise.all(ids.map((id) => http.delete(`/notification/admin/${id}`)))
   },
 }

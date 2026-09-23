@@ -22,10 +22,6 @@ export const DISABLED = {
   bannerDelete: true,
   /** No endpoint to remove one existing additional product image. */
   removeAdditionalImage: true,
-  /** Only GET and POST /notification/admin exist — no PUT. */
-  notificationEdit: true,
-  /** …and no DELETE. */
-  notificationDelete: true,
   /** No endpoint to mark an order as sent (`is_send`). */
   orderMarkSent: true,
   /** PUT /auth only accepts a new avatar file; there is no way to clear one. */

@@ -12,7 +12,7 @@ Each item says what the panel does today, so nothing silently breaks while an en
 
 | # | Gap | Screen | What the panel does today |
 |---|---|---|---|
-| 1 | **Notifications — no update, delete or unread count** (only `GET`/`POST /notification/admin`) | `/notifications` | List and create are live. Edit and delete buttons are visible but **disabled** with a tooltip; the topbar bell has no unread dot. Flags: `DISABLED.notificationEdit`, `DISABLED.notificationDelete`. The list's array key and limit/offset/search support are undocumented — the panel accepts `notifications` or `data`, and filters/slices client-side. |
+| 1 | **Notifications — no update or unread count** (only `GET`/`POST /notification/admin` and `DELETE /notification/admin/{id}`) | `/notifications` | List, create and delete are live; there is no edit action. Bulk delete sends one `DELETE` per id. The topbar bell has no unread dot. The list's array key and limit/offset/search support are undocumented — the panel accepts `notifications` or `data`, and filters/slices client-side. |
 | 2 | **`GET /banner/{id}`** | Banner edit | The banner is read out of `GET /banner` and found by id. Works, but fetches the whole list. |
 | 3 | **`PUT /banner/{id}`** | Banner edit | The form is fully usable and validates, but saving does not reach the server. The page shows a notice saying so. Flag: `USE_MOCK.bannerWrite`. |
 | 4 | **`DELETE /banner/{id}`** | Banner list | Delete button is visible but **disabled**, with a tooltip. Never faked — it is destructive. |

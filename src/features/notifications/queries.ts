@@ -1,5 +1,5 @@
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { type ListParams, type NotificationPayload, notificationsApi } from '@/api'
+import { type ID, type ListParams, type NotificationPayload, notificationsApi } from '@/api'
 
 export const notificationsKeys = {
   all: ['notifications'] as const,
@@ -18,6 +18,14 @@ export function useCreateNotification() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: (payload: NotificationPayload) => notificationsApi.create(payload),
+    onSuccess: () => void queryClient.invalidateQueries({ queryKey: [...notificationsKeys.all, 'list'] }),
+  })
+}
+
+export function useDeleteNotifications() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (ids: ID[]) => notificationsApi.remove(ids),
     onSuccess: () => void queryClient.invalidateQueries({ queryKey: [...notificationsKeys.all, 'list'] }),
   })
 }

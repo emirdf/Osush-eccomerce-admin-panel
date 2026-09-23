@@ -1,7 +1,5 @@
 {
   "add": "Bildiriş ugratmak",
-  "editUnavailable": "Bildirişi üýtgetmek üçin API entek ýok",
-  "deleteUnavailable": "Bildirişi pozmak üçin API entek ýok",
   "searchPlaceholder": "Gözle...",
   "table": {
     "no": "No.",
@@ -13,6 +11,13 @@
   "empty": {
     "title": "Bildiriş ýok",
     "description": "Ulanyjylara ilkinji bildirişi ugradyň."
+  },
+  "delete": {
+    "action": "{{name}} bildirişini poz",
+    "title": "Bildirişi pozmak",
+    "descriptionOne": "«{{name}}» bildirişini pozmak isleýärsiňizmi?",
+    "descriptionMany": "Saýlanan {{count}} bildirişi pozmak isleýärsiňizmi?",
+    "success": "{{count}} bildiriş pozuldy"
   },
   "form": {
     "createTitle": "Bildiriş ugratmak",

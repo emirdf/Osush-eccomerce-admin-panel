@@ -1,10 +1,12 @@
-import { Bell, CirclePlus, SquarePen, Trash2 } from 'lucide-react'
+import { Bell, CirclePlus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DISABLED, type Notification } from '@/api'
+import { type ID, type Notification } from '@/api'
 import { AdsSectionTabs } from '@/features/ads/AdsSectionTabs'
+import { BulkBar } from '@/components/ui/BulkBar'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { type Column, DataTable } from '@/components/ui/DataTable'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
@@ -16,15 +18,26 @@ import { useListParams } from '@/hooks/useListParams'
 import { formatDate } from '@/lib/format'
 import { localized } from '@/lib/i18n'
 import { toTotalPages } from '@/lib/pagination'
+import { toast } from '@/store/toast'
 import { NotificationModal } from './NotificationModal'
-import { useNotifications } from './queries'
+import { useDeleteNotifications, useNotifications } from './queries'
 
 export function NotificationsPage() {
   const { t, i18n } = useTranslation()
   const { page, search, limit, setPage, setSearch } = useListParams()
   const query = useNotifications({ page, limit, search })
+  const remove = useDeleteNotifications()
   const errorMessage = useApiErrorMessage()
   const [modalOpen, setModalOpen] = useState(false)
+  const [selected, setSelected] = useState<ID[]>([])
+  const [pendingDelete, setPendingDelete] = useState<{ ids: ID[]; name?: string } | null>(null)
+
+  const listKey = `${page}|${search}`
+  const [prevListKey, setPrevListKey] = useState(listKey)
+  if (listKey !== prevListKey) {
+    setPrevListKey(listKey)
+    setSelected([])
+  }
 
   const openCreate = () => setModalOpen(true)
 
@@ -57,21 +70,30 @@ export function NotificationsPage() {
       id: 'actions',
       header: t('common.table.actions'),
       align: 'center',
-      className: 'w-28',
-      skeleton: 'w-14',
-      // No PUT or DELETE /notification yet — visible but disabled, never a dead button.
-      cell: () => (
-        <div className="flex items-center justify-center gap-1">
-          <Button variant="ghost" size="icon-sm" disabled={DISABLED.notificationEdit} title={t('notifications.editUnavailable')} aria-label={t('notifications.editUnavailable')}>
-            <SquarePen className="size-[18px]" />
-          </Button>
-          <Button variant="ghost-danger" size="icon-sm" disabled={DISABLED.notificationDelete} title={t('notifications.deleteUnavailable')} aria-label={t('notifications.deleteUnavailable')}>
+      className: 'w-24',
+      skeleton: 'w-8',
+      cell: (n) => {
+        const name = localized(n.title, i18n.language)
+        return (
+          <Button variant="ghost-danger" size="icon-sm" onClick={() => setPendingDelete({ ids: [n.id], name })} aria-label={t('notifications.delete.action', { name })} title={t('common.delete')}>
             <Trash2 className="size-[18px]" />
           </Button>
-        </div>
-      ),
+        )
+      },
     },
   ]
+
+  const confirmDelete = () => {
+    if (!pendingDelete) return
+    remove.mutate(pendingDelete.ids, {
+      onSuccess: () => {
+        toast.success(t('notifications.delete.success', { count: pendingDelete.ids.length }))
+        setSelected((ids) => ids.filter((id) => !pendingDelete.ids.includes(id)))
+        setPendingDelete(null)
+      },
+      onError: (error) => toast.error(errorMessage(error)),
+    })
+  }
 
   return (
     <Card className="flex flex-col gap-4 p-4 sm:p-5">
@@ -79,6 +101,8 @@ export function NotificationsPage() {
       <PageHeader actions={<Button variant="success" icon={CirclePlus} onClick={openCreate}>{t('notifications.add')}</Button>}>
         <SearchInput value={search} onChange={setSearch} placeholder={t('notifications.searchPlaceholder')} />
       </PageHeader>
+
+      <BulkBar count={selected.length} onClear={() => setSelected([])} onDelete={() => setPendingDelete({ ids: selected })} />
 
       {query.isError ? (
         <ErrorState message={errorMessage(query.error)} onRetry={() => query.refetch()} />
@@ -91,6 +115,7 @@ export function NotificationsPage() {
           rowKey={(n) => n.id}
           isLoading={query.isPending}
           isFetching={query.isPlaceholderData}
+          selection={{ selected, onChange: setSelected, rowLabel: (n) => localized(n.title, i18n.language) }}
           minWidth={860}
           empty={
             search ? (
@@ -110,6 +135,19 @@ export function NotificationsPage() {
       <Pagination tone="success" page={page} totalPages={toTotalPages(query.data?.total ?? 0, limit)} onPageChange={setPage} />
 
       <NotificationModal open={modalOpen} onClose={() => setModalOpen(false)} />
+
+      <ConfirmDialog
+        open={pendingDelete !== null}
+        onClose={() => setPendingDelete(null)}
+        onConfirm={confirmDelete}
+        loading={remove.isPending}
+        title={t('notifications.delete.title')}
+        description={
+          pendingDelete?.name
+            ? t('notifications.delete.descriptionOne', { name: pendingDelete.name })
+            : t('notifications.delete.descriptionMany', { count: pendingDelete?.ids.length ?? 0 })
+        }
+      />
     </Card>
   )
 }
