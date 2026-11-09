@@ -21,7 +21,6 @@ Each item says what the panel does today, so nothing silently breaks while an en
 | 7 | **Logout** | Sidebar / topbar | Client-side only: the token and cache are cleared. Fine unless tokens must be revoked server-side. |
 | 8 | **Remove an existing product image (cover or additional)** | Product edit | `PUT /product/{id}` only accepts *new* files, so there is no way to delete or reorder what is already stored. The ⊗ button is disabled on every server-side image, including the cover — only "Replace" (which uploads a new `mainImage`) is offered. New images added in the same session can still be removed before saving. |
 | 9 | **Clear the admin avatar** | Profile | `PUT /auth` only accepts a new avatar file, so "Delete" is disabled. A way to clear it (e.g. `avatar: null` in `data`) would help. |
-| 10 | **Mark an order as sent** (set `is_send`) | Order detail | "Ugradyldy belle" is visible but **disabled** with an explanation. Flag: `DISABLED.orderMarkSent`. Suggested: `PUT /product/order/{id} { is_send: true }`. |
 
 ## 2. Endpoints that ignore documented parameters
 

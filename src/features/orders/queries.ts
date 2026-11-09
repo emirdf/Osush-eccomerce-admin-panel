@@ -1,5 +1,5 @@
-import { keepPreviousData, type QueryClient, useQuery, useQueryClient } from '@tanstack/react-query'
-import { type ID, type ListResult, type OrderListItem, type OrderListParams, ordersApi } from '@/api'
+import { keepPreviousData, type QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { type ID, type ListResult, type Order, type OrderListItem, type OrderListParams, ordersApi } from '@/api'
 
 export const ordersKeys = {
   all: ['orders'] as const,
@@ -51,4 +51,16 @@ export function useCachedOrderRow(id: ID | null): OrderListItem | undefined {
     if (row) return row
   }
   return undefined
+}
+
+export function useMarkOrderSent() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (id: ID) => ordersApi.markSent(id),
+    onSuccess: (_, id) => {
+      queryClient.setQueryData<Order>(ordersKeys.detail(id), (order) => (order ? { ...order, isSent: true } : order))
+      // The sent/not-sent filters change which pages the order belongs to — refetch.
+      void queryClient.invalidateQueries({ queryKey: ordersKeys.lists() })
+    },
+  })
 }

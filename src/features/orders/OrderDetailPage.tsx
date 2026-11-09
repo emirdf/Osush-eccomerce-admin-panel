@@ -1,11 +1,12 @@
-import { ArrowLeft, PackageX } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { ArrowLeft, PackageX, Truck } from 'lucide-react'
+import { type ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useParams } from 'react-router-dom'
-import { ApiError, DISABLED, type OrderProduct } from '@/api'
+import { ApiError, type OrderProduct } from '@/api'
 import { Badge } from '@/components/ui/Badge'
 import { Button, ButtonLink } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { ErrorState } from '@/components/ui/ErrorState'
 import { FormPageSkeleton } from '@/components/ui/FormPageSkeleton'
@@ -14,7 +15,8 @@ import { useApiErrorMessage } from '@/hooks/useApiErrorMessage'
 import { cn } from '@/lib/cn'
 import { formatMoney, formatNumber } from '@/lib/format'
 import { formatPhone } from '@/lib/phone'
-import { useCachedOrderRow, useOrder } from './queries'
+import { toast } from '@/store/toast'
+import { useCachedOrderRow, useMarkOrderSent, useOrder } from './queries'
 
 /** Passed by the list so "back" restores its page/search/filter, and so the name can be shown. */
 export interface OrderLocationState {
@@ -74,6 +76,8 @@ export function OrderDetailPage() {
   const id = parseId(params.id)
   const query = useOrder(id)
   const cachedRow = useCachedOrderRow(id)
+  const markSent = useMarkOrderSent()
+  const [confirmSend, setConfirmSend] = useState(false)
   const errorMessage = useApiErrorMessage()
 
   const backTo = `/orders${state.from ?? ''}`
@@ -107,6 +111,15 @@ export function OrderDetailPage() {
   const order = query.data
   // `GET /product/order/{id}` has no customer name; take it from the list row we came from.
   const customerName = state.customerName || cachedRow?.customerName || ''
+
+  const confirmMarkSent = () =>
+    markSent.mutate(order.id, {
+      onSuccess: () => {
+        toast.success(t('orders.detail.markSentSuccess'))
+        setConfirmSend(false)
+      },
+      onError: (error) => toast.error(errorMessage(error)),
+    })
 
   return (
     <div className="grid items-start gap-3 lg:grid-cols-2">
@@ -154,19 +167,25 @@ export function OrderDetailPage() {
         </dl>
 
         {!order.isSent && (
-          <div className="flex flex-wrap items-center justify-end gap-x-3 gap-y-2">
-            {/* No endpoint to set is_send yet — visible but disabled, never a dead button. */}
-            {DISABLED.orderMarkSent && (
-              <p id="mark-sent-hint" className="text-xs text-fg-muted">
-                {t('orders.detail.markSentUnavailable')}
-              </p>
-            )}
-            <Button variant="success" disabled={DISABLED.orderMarkSent} aria-describedby={DISABLED.orderMarkSent ? 'mark-sent-hint' : undefined}>
+          <div className="flex justify-end">
+            <Button variant="success" icon={Truck} onClick={() => setConfirmSend(true)}>
               {t('orders.detail.markSent')}
             </Button>
           </div>
         )}
       </Card>
+
+      <ConfirmDialog
+        open={confirmSend}
+        onClose={() => setConfirmSend(false)}
+        onConfirm={confirmMarkSent}
+        loading={markSent.isPending}
+        tone="primary"
+        icon={Truck}
+        title={t('orders.detail.markSentTitle')}
+        description={t('orders.detail.markSentDescription')}
+        confirmLabel={t('orders.detail.markSentConfirm')}
+      />
     </div>
   )
 }

@@ -40,11 +40,12 @@ export function ConfirmDialog({
       hideClose
       footer={
         <div className="grid w-full grid-cols-2 gap-2">
-          <Button variant="outline" onClick={onClose} disabled={loading}>
-            {t('common.cancel')}
+          {/* Equal columns: a long label truncates rather than spilling out of its button. */}
+          <Button variant="outline" className="min-w-0" onClick={onClose} disabled={loading}>
+            <span className="min-w-0 truncate">{t('common.cancel')}</span>
           </Button>
-          <Button variant={tone} onClick={onConfirm} loading={loading}>
-            {confirmLabel ?? t('common.delete')}
+          <Button variant={tone} className="min-w-0" onClick={onConfirm} loading={loading}>
+            <span className="min-w-0 truncate">{confirmLabel ?? t('common.delete')}</span>
           </Button>
         </div>
       }

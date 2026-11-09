@@ -41,7 +41,10 @@
     "itemCount": "Harytlaryň jemi sany",
     "totalPrice": "Jemi bahasy",
     "markSent": "Ugradyldy belle",
-    "markSentUnavailable": "Sargydy ugradyldy diýip bellemek üçin API entek ýok",
+    "markSentConfirm": "Ugrat",
+    "markSentTitle": "Sargydy ugratmak",
+    "markSentDescription": "Sargyt eltip bermek üçin ugradyldy diýip bellener. Muny yzyna gaýtaryp bolmaýar.",
+    "markSentSuccess": "Sargyt ugradyldy diýip bellendi",
     "notFound": "Sargyt tapylmady"
   }
 }

@@ -30,4 +30,9 @@ export const ordersApi = {
     const { data } = await http.get(`/product/order/${id}`)
     return toOrder(id, parseDto(orderDetailDto, data, `GET /product/order/${id}`))
   },
+
+  /** Sets `is_send`; there is no endpoint to undo it. */
+  async markSent(id: ID): Promise<void> {
+    await http.put(`/product/order/send/${id}`)
+  },
 }
